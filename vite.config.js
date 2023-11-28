@@ -3,7 +3,7 @@ const isCodeSandbox = 'SANDBOX_URL' in process.env || 'CODESANDBOX_HOST' in proc
 export default {
     root: 'src/',
     publicDir: '../static/',
-    base: './',
+    base: '/humanevalV2/',
     server:
     {
         host: true,
@@ -14,5 +14,9 @@ export default {
         outDir: '../dist',
         emptyOutDir: true,
         sourcemap: true
-    }
+    },
+    esbuild: {
+        target: 'es2015', // o una versione di ECMAScript supportata
+        include: ['.js', '.jsx', '.ts', '.tsx', '.json', '.html'],
+      },
 }
